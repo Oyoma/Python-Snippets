@@ -1,0 +1,18 @@
+name=input(" Please enter your name: ")
+my_list = []
+count=0
+
+for i in name:
+    if i==' ':
+        print ('value of index ', count, 'is space')
+        count +=1
+    else:
+        print ('value of index ', count, 'is ', i)
+        count +=1
+        my_list.append(i)
+        
+print("The length of your name with type", type(name), 
+      'is ', len(name))
+print('The letters in your name are not put in ', 
+      type(my_list), 'this is it ....', my_list)
+print ('Your name is ', name, '. You are wonderful.')
