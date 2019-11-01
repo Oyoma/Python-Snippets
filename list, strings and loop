@@ -13,6 +13,6 @@ for i in name:
         
 print("The length of your name with type", type(name), 
       'is ', len(name))
-print('The letters in your name are not put in ', 
+print('The letters in your name are now put in ', 
       type(my_list), 'this is it ....', my_list)
 print ('Your name is ', name, '. You are wonderful.')
