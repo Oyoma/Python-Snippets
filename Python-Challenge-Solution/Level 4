@@ -1,0 +1,45 @@
+import re
+import urllib.request
+
+html = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='
+value = '12345'
+
+# Specify the location for file to store output
+filename = "C:/Users/ANGEL/Desktop/Level4.txt"
+
+# Open file with write function, where plus means create if not available
+filehandle = open(filename, 'w+')
+
+n = 400
+filehandle.write("This operation is performed " + str(n) + " times" + "\n"*2)
+
+# Starting a loop to write content to file
+for i in range(n):
+    new_html = html + value
+
+    with urllib.request.urlopen(new_html) as response:
+        content = response.read()
+
+        # Convert the content variable to string because it is in byte
+        content_str = content.decode("utf-8")
+
+        # Write the following to the file
+        filehandle.write(str(i+1) + ": " + newhtml + "\n")
+        filehandle.write('site content is: ' + content_str + "\n" * 2)
+
+        # find all the digits in content_str and assigns to list content_digit
+        content_digit = re.findall("\d", content_str)
+
+        # Make value variable empty
+        value = ""
+
+        # Start a loop to assign the digits in content_digit to value
+        for b in content_digit:
+            value += b
+
+    # Goes back to the beginning of the first loop
+
+# When loop is completed, close the file
+filehandle.close()
+
+#End
