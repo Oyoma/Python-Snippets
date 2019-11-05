@@ -1,0 +1,53 @@
+**************This solution seems a bit naive because it was my first guess to solve the puzzle. However, it solved it. 
+Other ways are found online, especially the suggested make.translate()
+**********************************************************
+
+import string
+
+# Assign lowercase alphabet to a variable list letters
+letters = list(string.ascii_lowercase)
+
+#Initialise an empty dictionary
+dict = {}
+
+#Reassign a variable scrambled letter with step 2 since I had gotten a clue of the map given
+scrambled_letters = letters[2:26]
+
+extra = ['a', 'b']
+scrambled_letters.extend(extra)   #Adds the contents of extra to the end of scrambled_letters' list
+
+a = 0
+
+# Start a loop to populate the dictionary
+for i in letters:
+        dict[i] = scrambled_letters[a]
+        a+=1
+
+#Added the following because I wanted to ensure the dictionary covered all that was in the coded statement given
+dict[' '] = ' '
+dict['.'] = '.'
+dict["'"] = "'"
+dict['('] = '('
+dict[')'] = ')'
+
+print(dict)
+
+
+translate = input("Enter the string you want to decode")
+
+'''e.g. g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr 
+ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.'''
+
+# Initialise an empty string
+solution = ""
+
+# Loop the coded string to decrypt
+for i in translate:
+    solution+= dict[i]
+
+#Print the final solution
+print(solution)
+
+
+
+*******************Though, this did not solve the level in entirety, it allowed me to decrypt the encrypted string**********************
